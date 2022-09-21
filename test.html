@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>King 100</title>
+</head>
+
+<body class="justify-center">
+
+    <section>
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <label tabindex="0" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </label>
+                    <ul tabindex="0"
+                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Homepage</a></li>
+                        <li><a>Portfolio</a></li>
+                        <li><a>About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navbar-center">
+                <a class="btn btn-ghost normal-case text-xl">King's 100th Anniversary</a>
+            </div>
+            <div class="navbar-end">
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <div class="flex m-4 w-screen justify-center mt-8">
+
+            
+            <div class="card bg-base-100 shadow-xl m-4">
+                <div class="card-body">
+                    <div class="overflow-x-auto">
+                        <table class="table w-full">
+                            <!-- head -->
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Job</th>
+                                    <th>Favorite Color</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- row 1 -->
+                                <tr>
+                                    <th>1</th>
+                                    <td>Cy Ganderton</td>
+                                    <td>Quality Control Specialist</td>
+                                    <td>Blue</td>
+                                </tr>
+                                <!-- row 2 -->
+                                <tr>
+                                    <th>2</th>
+                                    <td>Hart Hagerty</td>
+                                    <td>Desktop Support Technician</td>
+                                    <td>Purple</td>
+                                </tr>
+                                <!-- row 3 -->
+                                <tr>
+                                    <th>3</th>
+                                    <td>Brice Swyre</td>
+                                    <td>Tax Accountant</td>
+                                    <td>Red</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="flex m-4 w-screen justify-center mt-8">
+
+            <div class="card w-96 bg-base-100 shadow-xl m-4">
+                <div class="card-body">
+                    <h2 class="card-title" id="inYear">Year: </h2>
+                    <input type="number" placeholder="Type here" id="numPoints" class="input input-bordered input-primary w-full max-w-xs" />
+                            <select id="yearChoice" class="select select-bordered select-xs ">
+                            
+                                    <option value="20-50">
+                                        1920 - 1950
+                                    </option>
+                                    <option value="60">
+                                        1960
+                                    </option>
+                                    <option value="70">
+                                        1970
+                                    </option>
+                                    <option value="80">
+                                        1980
+                                    </option>
+                                    <option value="90">
+                                        1980
+                                    </option>
+                                    <option value="00">
+                                        2000
+                                    </option>
+                                    <option value="10">
+                                        2010
+                                    </option>
+                                    <option value="20">
+                                        2020
+                                    </option>
+                            </select>
+                    <button class="btn" onclick="setPoints()">Button</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</body>
+<script>
+    document.getElementById('yearChoice').addEventListener('change', function () {
+            document.getElementById("inYear").innerHTML = `Year: ${this.options[this.selectedIndex].text}`
+        });
+
+    async function setPoints(){
+        
+        console.log(document.getElementById('numPoints').value);
+        console.log(`http://10.0.0.13:5000/set/${document.getElementById('yearChoice').value}`);
+
+        const response = await fetch(`http://10.0.0.13:5000/set/${document.getElementById('yearChoice').value}`, { method: "POST", body: new URLSearchParams({ points: document.getElementById('numPoints').value })
+        })
+
+    }
+</script>
+</html>

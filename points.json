@@ -1,0 +1,53 @@
+[
+	{
+		"year": "20-50",
+		"yearName": "1920 - 1950",
+		"points": "25",
+		"type": 1,
+		"recentAddtion": "+25"
+	},
+	{
+		"year": "60",
+		"yearName": "1960",
+		"points": 0,
+		"type": 1
+	},
+	{
+		"year": "70",
+		"yearName": "1970",
+		"points": "",
+		"type": 1,
+		"recentAddtion": "+"
+	},
+	{
+		"year": "80",
+		"yearName": "1980",
+		"points": "30",
+		"type": 1
+	},
+	{
+		"year": "90",
+		"yearName": "1990",
+		"points": 0,
+		"type": 1
+	},
+	{
+		"year": "00",
+		"yearName": "2000",
+		"points": 0,
+		"type": 1
+	},
+	{
+		"year": "10",
+		"yearName": "2010",
+		"points": 0,
+		"type": 1
+	},
+	{
+		"year": "20",
+		"yearName": "2020",
+		"points": "25",
+		"type": 1,
+		"recentAddtion": "+25"
+	}
+]
