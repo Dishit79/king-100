@@ -35,8 +35,9 @@
 	{
 		"year": "00",
 		"yearName": "2000",
-		"points": 0,
-		"type": 1
+		"points": "110",
+		"type": 1,
+		"recentAddtion": "+110"
 	},
 	{
 		"year": "10",

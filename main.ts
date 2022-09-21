@@ -56,12 +56,13 @@ app.get("/", async (req, res) => {
 })
 
 app.get("/points", async (req, res) => {
-    const rawPoints = await getManyYears()
-    res.render("points", {points: rawPoints} )
+    const points = await getManyYears()
+    res.render("points", {points: points} )
 })
 
 app.get("/admin", async (req, res) => {
-    res.render("test")
+    const points = await getManyYears()
+    res.render("test", { points: points })
 })
 
 app.listen(port);

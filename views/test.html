@@ -11,8 +11,7 @@
 </head>
 
 <body class="justify-center">
-
-    <section>
+     <section>
         <div class="navbar bg-base-100">
             <div class="navbar-start">
                 <div class="dropdown">
@@ -40,6 +39,9 @@
 
     </section>
 
+    <div id="notif" class="container mx-auto mt-6 center">
+    </div>
+
     <section>
         <div class="flex m-4 w-screen justify-center mt-8">
 
@@ -58,27 +60,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- row 1 -->
+                                <% it.points.forEach(function(pi) { %>
+                                
+  
                                 <tr>
                                     <th>1</th>
-                                    <td>Cy Ganderton</td>
-                                    <td>Quality Control Specialist</td>
-                                    <td>Blue</td>
+                                    <td><%= pi.yearName %></td>
+                                    <td><%= pi.points %></td>
                                 </tr>
-                                <!-- row 2 -->
-                                <tr>
-                                    <th>2</th>
-                                    <td>Hart Hagerty</td>
-                                    <td>Desktop Support Technician</td>
-                                    <td>Purple</td>
-                                </tr>
-                                <!-- row 3 -->
-                                <tr>
-                                    <th>3</th>
-                                    <td>Brice Swyre</td>
-                                    <td>Tax Accountant</td>
-                                    <td>Red</td>
-                                </tr>
+                                <% }) %>
                             </tbody>
                         </table>
                     </div>
@@ -120,7 +110,7 @@
                                         2020
                                     </option>
                             </select>
-                    <button class="btn" onclick="setPoints()">Button</button>
+                    <button class="btn" onclick="setPoints()">Submit</button>
                 </div>
             </div>
 
@@ -143,7 +133,30 @@
 
         const response = await fetch(`http://localhost:5000/set/${document.getElementById('yearChoice').value}`, { method: "POST", body:  new URLSearchParams({ points: document.getElementById('numPoints').value })
         })
-
+        sendNotification('Points Updated')
     }
+
+      function sendNotification(msg) {
+
+            document.getElementById('notif').innerHTML = `
+      <div id="${msg}" class="alert alert-info shadow-lg mt-10">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>${msg}</span>
+        </div>
+      </div>
+    `
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            setTimeout(() => {
+                const el = document.getElementById(msg)
+                el.style.transition = "opacity " + 5 + "s ease";
+
+                el.style.opacity = 0;
+                setTimeout(function () {
+                    el.parentNode.removeChild(el);
+                }, 5000)
+            }, 5000)
+        }
 </script>
 </html>
