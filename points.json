@@ -2,22 +2,23 @@
 	{
 		"year": "20-50",
 		"yearName": "1920 - 1950",
-		"points": "25",
 		"type": 1,
-		"recentAddtion": "+25"
+		"recentAddtion": "+100",
+		"points": "100"
 	},
 	{
 		"year": "60",
 		"yearName": "1960",
-		"points": 0,
-		"type": 1
+		"type": 1,
+		"recentAddtion": "+100",
+		"points": "100"
 	},
 	{
 		"year": "70",
 		"yearName": "1970",
-		"points": "",
+		"points": "700",
 		"type": 1,
-		"recentAddtion": "+"
+		"recentAddtion": "+700"
 	},
 	{
 		"year": "80",

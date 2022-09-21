@@ -141,7 +141,7 @@
         console.log(document.getElementById('numPoints').value);
         console.log(`http://10.0.0.13:5000/set/${document.getElementById('yearChoice').value}`);
 
-        const response = await fetch(`http://10.0.0.13:5000/set/${document.getElementById('yearChoice').value}`, { method: "POST", body: new URLSearchParams({ points: document.getElementById('numPoints').value })
+        const response = await fetch(`http://localhost:5000/set/${document.getElementById('yearChoice').value}`, { method: "POST", body:  new URLSearchParams({ points: document.getElementById('numPoints').value })
         })
 
     }

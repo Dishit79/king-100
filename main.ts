@@ -1,11 +1,15 @@
 import { opine, serveStatic, urlencoded, Router, raw } from "https://deno.land/x/opine/mod.ts";
 import { dirname, join } from "https://deno.land/x/opine/deps.ts";
 import { Database } from 'https://deno.land/x/aloedb/mod.ts';
+import { renderFile } from "https://deno.land/x/eta/mod.ts";
 
 
 const app = opine()
 const port = 5000
 const __dirname = dirname(import.meta.url);
+
+app.engine(".html", renderFile);
+app.set("view engine", "html");
 
 // Structure of stored documents
 interface StoreDB {
@@ -30,7 +34,6 @@ export async function getManyYears() {
 }
 
 
-
 app.set("view cache", false)
 app.set('trust proxy', true)
 app.use(urlencoded());
@@ -48,6 +51,18 @@ app.get("/get/years", async (req, res) => {
     res.send(update)
 })
 
+app.get("/", async (req, res) => {
+    res.render("index")
+})
+
+app.get("/points", async (req, res) => {
+    const rawPoints = await getManyYears()
+    res.render("points", {points: rawPoints} )
+})
+
+app.get("/admin", async (req, res) => {
+    res.render("test")
+})
 
 app.listen(port);
 console.log(`Opine started on localhost:${port}`)
