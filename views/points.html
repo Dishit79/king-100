@@ -1,68 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" data-theme="dark">
+<% layout('layout.html')%>
+<meta http-equiv="refresh" content="30">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.24.0/dist/full.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>King 100</title>
-</head>
+<section>
+    <div class="grid grid-cols-4 grid-row-2 gap-4 m-8">
 
-<body class="justify-center">
+        <% it.points.forEach(function(pi) { %>
 
-    <section>
-        <div class="navbar bg-base-100">
-            <div class="navbar-start">
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost btn-circle">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h7" />
-                        </svg>
-                    </label>
-                    <ul tabindex="0"
-                        class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Homepage</a></li>
-                        <li><a>Portfolio</a></li>
-                        <li><a>About</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navbar-center">
-                <a class="btn btn-ghost normal-case text-xl">King's 100th Anniversary</a>
-            </div>
-            <div class="navbar-end">
-            </div>
-        </div>
-
-    </section>
-
-    <section>
-        <div class="grid grid-cols-4 grid-row-2 gap-4 m-8">
-
-            <% it.points.forEach(function(pi) { %>
-
-            <div class="card w-96 bg-base-100 shadow-xl m-4">
-                <div class="card-body">
-                    <h2 class="card-title">Year: <%= pi.yearName %></h2>
-                    <div class="stats shadow">
-                        <div class="stat">
-                            <div class="stat-title">Total Year Points</div>
-                            <div class="stat-value"><%= pi.points %></div>
-                            <div class="stat-desc">21% more than last month</div>
-                        </div>
+        <div class="card w-96 <%= pi.color%> > shadow-xl m-4">
+            <div class="card-body ">
+                <h2 class="card-title">Year: <%= pi.yearName %></h2>
+                <div class="stats shadow">
+                    <div class="stat">
+                        <div class="stat-title">Total Year Points</div>
+                        <div class="stat-value"><%= pi.points %></div>
+                        <div class="stat-desc">21% more than last month</div>
                     </div>
                 </div>
             </div>
-            <% }) %>
-            
         </div>
-    </section>
-    
+        <% }) %>
+        
+    </div>
+</section>
 
-</body>
+<script language="javascript">
 
-</html>
+</script>

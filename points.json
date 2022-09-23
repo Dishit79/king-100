@@ -3,53 +3,64 @@
 		"year": "20-50",
 		"yearName": "1920 - 1950",
 		"type": 1,
-		"recentAddtion": "+100",
-		"points": "100"
+		"recentAddtion": "+0",
+		"points": "0",
+		"color": "bg-teal-600"
 	},
 	{
 		"year": "60",
 		"yearName": "1960",
 		"type": 1,
-		"recentAddtion": "+100",
-		"points": "100"
+		"recentAddtion": "+0",
+		"points": "0",
+		"color": "bg-purple-500"
 	},
 	{
 		"year": "70",
 		"yearName": "1970",
-		"points": "700",
+		"points": "0",
 		"type": 1,
-		"recentAddtion": "+700"
+		"recentAddtion": "+0",
+		"color": "bg-amber-400"
 	},
 	{
 		"year": "80",
 		"yearName": "1980",
-		"points": "30",
-		"type": 1
+		"points": "0",
+		"type": 1,
+		"color": "bg-blue-700",
+		"recentAddtion": "+0"
 	},
 	{
 		"year": "90",
 		"yearName": "1990",
-		"points": 0,
-		"type": 1
+		"points": "0",
+		"type": 1,
+		"recentAddtion": "+0",
+		"color": "bg-orange-600"
 	},
 	{
 		"year": "00",
 		"yearName": "2000",
-		"points": "110",
+		"points": "0",
 		"type": 1,
-		"recentAddtion": "+110"
+		"recentAddtion": "+0",
+		"color": "bg-green-700"
 	},
 	{
 		"year": "10",
 		"yearName": "2010",
-		"points": 0,
-		"type": 1
+		"points": "0",
+		"type": 1,
+		"recentAddtion": "+0",
+		"color": "bg-pink-900"
 	},
 	{
 		"year": "20",
 		"yearName": "2020",
-		"points": "25",
+		"points": "0",
 		"type": 1,
-		"recentAddtion": "+25"
+		"recentAddtion": "+0",
+		"color": "bg-rose-600"
 	}
 ]
